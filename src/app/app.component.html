@@ -1,0 +1,80 @@
+/<form #f="ngForm"(ngSubmit)="Onsavelivraison(f.value)">
+<div class="container">
+  <div style="text-align:center">
+    <h1>Commandes</h1>
+  </div>
+
+<div  class="text-white">
+  <label><input type="checkbox" />commande1</label>
+  <label><input type="checkbox" />commande2</label>
+  <label><input type="checkbox" />commande3</label>
+  <label><input type="checkbox" />commande4</label>
+  <label><input type="checkbox" />commande5</label>
+</div>
+
+  <div style="text-align:center">
+    <h1>
+      Livreur localisation
+    </h1>
+  </div>
+
+  <div class="alert alert-warning">
+    Note: Merci de cliquer sur find me pour trouver la localisation!
+  </div>
+  <div>
+    <div>
+      <button [disabled]="isTracking" class="btn btn-primary" (click)="findMe()">Find me</button>
+    </div>
+    <div class="text-white">
+      <span>Latitude: {{currentLat}}</span>
+      <span>Longitude: {{currentLong}}</span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" style="color:blue" >Latitude</label>
+      <input class="form-control" type="text" name="latitude" ngModel>
+
+    </div>
+    <div class="form-group">
+      <label class="control-label" style="color:blue" >Longitude</label>
+      <input class="form-control" type="text" name="longitude" ngModel>
+
+      <br>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <h3>
+            <div #gmap style="width:100%;height:300px"></div>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <footer>
+    <div>
+
+    </div>
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <div class="col-md-2">
+      </div>
+    </div>
+
+
+  </footer>
+</div>
+</div>
+
+<div class="container">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <form class="panel panel-default">
+      <div class="panal panel-body" >
+  <button class="btn btn-success" type="submit"> Save </button>
+      </div>
+    </form>
+    </div>
+  </div>
+</>
